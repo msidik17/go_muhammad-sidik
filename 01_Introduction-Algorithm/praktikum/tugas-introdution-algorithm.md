@@ -5,7 +5,7 @@
 2. Sebutkan dan jelaskan berbagai teknologi yang perlu dipelajari untuk menjadi seorang backend  
     engineer!
    jawaban :
-   teknologi yang perlu dipelajari untuk manjadi seorang backend engineer yaitu:
+   teknologi yang perlu dipelajari untuk manjadi seorang backend engineer yaitu :
    - Programming Languages
    - Web Frameworks
    - Database Management
