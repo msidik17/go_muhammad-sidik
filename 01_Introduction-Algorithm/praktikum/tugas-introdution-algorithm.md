@@ -6,15 +6,15 @@
     engineer!
    jawaban :
    teknologi yang perlu dipelajari untuk manjadi seorang backend engineer yaitu :
-   1. Programming Languages
-   2. Web Frameworks
-   3. Database Management
-   4. API Development
-   5. Version Control
-   6. Server Management
-   7. Cloud Services
-   8. Authentication & Authorization
-   9. Caching
-   10. Web Servers
-   11. Testing & Deployment
-   12. Security Best Practices
+   - Programming Languages
+   - Web Frameworks
+   - Database Management
+   - API Development
+   - Version Control
+   - Server Management
+   - Cloud Services
+   - Authentication & Authorization
+   - Caching
+   - Web Servers
+   - Testing & Deployment
+   - Security Best Practices
