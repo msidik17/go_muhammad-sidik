@@ -194,9 +194,9 @@ func main(){
 			}else{
 				fmt.Printf("%s Bukan Polindrome. \n", input)
 			}
-
+			break
 		} 
-		break
+		
 
 	}
 }
