@@ -11,4 +11,13 @@ func main(){
 	c := a * b 
 
 	fmt.Println(c)
+
+
+	h := 9
+	i := 7
+
+	l := h + i * h / i
+
+	fmt.Println(l)
+
 }
