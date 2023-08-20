@@ -1,3 +1,3 @@
 ini File Testing untuk soal eksplorasi
 
-di kerjakan oleh Muhammad Sidik
+di buat oleh Muhammad Sidik
