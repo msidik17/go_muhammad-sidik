@@ -1,4 +1,4 @@
-03 Materi vision Control & Branch Management Git
+03 Materi version Control & Branch Management Git
 
 pada materi ini saya dapat mempelajarin beberapa hal dasar dalam penggunaan Git dan Github seperti :
 
