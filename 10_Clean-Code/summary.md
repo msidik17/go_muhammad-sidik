@@ -1,7 +1,7 @@
 10 Clean Code
 
 Clean Code
-Clean code adalah konsep dalam pengembangan perangkat lunak yang menekankan pada penulisan kode yang mudah dibaca, dimengerti, dan mudah dirawat. Tujuannya adalah untuk menghasilkan kode yang efisien, dapat diuji dengan baik, dan memiliki struktur yang jelas. Clean code membantu mengurangi kompleksitas dan mempermudah kolaborasi antar anggota tim pengembangan, karena kode yang bersih lebih mudah dipahami dan dikelola.
+Clean code adalah konsep dalam pengembangan perangkat lunak yang menekankan pada penulisan kode yang mudah dibaca, dimengerti, dan mudah dirawat. Tujuannya adalah untuk menghasilkan kode yang efisien, dan dapat diuji dengan baik, dan memiliki struktur yang jelas. Clean code membantu mengurangi kompleksitas dan mempermudah kolaborasi antar anggota tim pengembangan, karena kode yang bersih lebih mudah dipahami dan dikelola.
 
 pada materi ini saya mempelajari bagaimana cara membuat code dengan baik dan mudah untuk dipahami dengan beberapa karakteristik tertentu seperti :
 
