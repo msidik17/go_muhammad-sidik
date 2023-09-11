@@ -27,6 +27,9 @@ ALTER TABLE Transactions_Details
 ADD CONSTRAINT FK_Transactions_Details_Product
 FOREIGN KEY (ID_Product) REFERENCES Product(ID_Product);
 
+ALTER TABLE Kurir
+ADD Ongkos_Dasar INT;
+
 ALTER TABLE Kurir RENAME TO Shipping;
 
 DROP TABLE shipping;
