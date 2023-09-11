@@ -1,39 +1,44 @@
 -- Active: 1694339097796@@127.0.0.1@3306@alta_online_shop
+-- SQL --
+CREATE DATABASE alta_online_shop;
+
+USE alta_online_shop; 
+
 CREATE TABLE Product (
-    ID_Product INT(11) PRIMARY KEY,
-    Code VARCHAR(50),
-    Name VARCHAR(100),
-    Status SMALLINT,
-    Create_at TIMESTAMP,
-    Update_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    ID_Operator INT,
-    ID_TP INT,
-    ID_Descriptions INT
+    id_product INT AUTO_INCREMENT PRIMARY KEY,
+    code VARCHAR(50),
+    name VARCHAR(100),
+    status SMALLINT,
+    create_at TIMESTAMP,
+    update_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    id_operator INT,
+    id_tp INT,
+    id_descriptions INT
 );
 
 CREATE TABLE Operator (
-    ID_Operator INT(11) PRIMARY KEY,
+    ID_Operator INT UNIQUE AUTO_INCREMENT  PRIMARY KEY,
     Name VARCHAR(100),
     Create_at TIMESTAMP,
     Update_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE Type_Product (
-    ID_TP INT(11) PRIMARY KEY,
+    ID_TP INT UNIQUE AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(100),
     Create_at TIMESTAMP,
     Update_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE Product_Descriptions (
-    ID_Descriptions INT(11) PRIMARY KEY,
+    ID_Descriptions INT AUTO_INCREMENT PRIMARY KEY,
     Description TEXT,
     Create_at TIMESTAMP,
     Update_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE Transactions (
-    ID_Transactions INT(11) PRIMARY KEY,
+    ID_Transactions INT AUTO_INCREMENT PRIMARY KEY,
     Status VARCHAR(255),
     Total_QTY INT,
     Total_Price NUMERIC(25,2),
@@ -44,7 +49,7 @@ CREATE TABLE Transactions (
 );
 
 CREATE TABLE Users (
-    ID_Users INT(11) PRIMARY KEY,
+    ID_Users INT UNIQUE AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(255),
     DOB DATE,
     Gender CHAR(1),
@@ -53,7 +58,7 @@ CREATE TABLE Users (
 );
 
 CREATE TABLE Transactions_Details (
-    ID_TD INT(11) PRIMARY KEY,
+    ID_TD INT AUTO_INCREMENT PRIMARY KEY,
     Status VARCHAR(255),
     QTY INT,
     Price NUMERIC(25,2),
@@ -64,7 +69,7 @@ CREATE TABLE Transactions_Details (
 );
 
 CREATE TABLE Payment_Method (
-    ID_PM INT(11) PRIMARY KEY,
+    ID_PM INT UNIQUE AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(255),
     Status SMALLINT,
     Create_at TIMESTAMP,
@@ -72,7 +77,7 @@ CREATE TABLE Payment_Method (
 );
 
 CREATE TABLE Kurir (
-    ID_Kurir INT(11) PRIMARY KEY,
+    ID_Kurir INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(255),
     Create_at TIMESTAMP,
     Update_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
