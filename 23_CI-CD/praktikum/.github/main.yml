@@ -1,47 +1,44 @@
-name: test, build, deploy mvc in main server 
+name: Docker Image CI
+
 on:
   push:
-    branch:
-      -main
+    branches: "main"
+
 jobs:
-  build_docker:
-    name: build and push to docker hub
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: docker build
-      run: docker build -t (nama repository) .
-    -  name: Login to Docker Hub
-        uses: docker/login-action@v3
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+      -
+        name: Login to Docker Hub
+        uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - name : push to docker
-      run: docker push (nama repository)
-    
-  deploy: 
-    name: deployment  to EC2 server
-      runs-on: ubuntu-latest
-      needs: build_docker
-      steps:
-        - uses: actions/checkout@v3
-        - name: login to EC2  
-          env:
-            SSH_KEY: ${{secrets.SSH_PRIVATE_KEY}}
-            SSH_HOST: ${{secrets.SSH_HOSTNAME}}
-            SSH_USER: ${{secrets.SSH_USER_NAME}}
-          run: |
-          # mkdir -p ~/.ssh/
-          echo "$SSH_KEY" > ~/.ssh/(nama repository).pem
-          chmod 400 ~/.ssh/(nama repository).pem
-          cat >>~/.ssh/config <<END
-          Host staging
-            HostName $SSH_HOST
-            User $SSH_USER
-            IdentityFile ~/.ssh/(nama sepository).pem
-            StrictHostKeyChecking=no
-          END
-        - name: login EC2 + docker pull + running container
-          run: ssh staging 'docker rm -f $(docker ps -a -q) && docker pull (nama repository) && docker run -d -p 8000:8000 --name simpe-mvc-apps (nama repository)'
-        
-    
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      -
+        name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/cicd:latest
+      -  
+        name: connect ssh
+        uses: appleboy/ssh-action@v0.1.9
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            docker stop ${{ secrets.CNAME }}
+            docker rm ${{ secrets.CNAME }}
+            docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/cicd
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/cicd
+            docker run --name ${{ secrets.CNAME }} -p 8080:8080 -d -e SERVER_PORT=${{secrets.SERVER_PORT}} -e DB_HOST=${{secrets.DB_HOST}} -e DB_PORT=3306 -e DB_USER=${{secrets.DB_USER}} -e DB_NAME=${{secrets.DB_NAME}} -e DB_PASSWORD=${{secrets.DB_PASSWORD}} ${{ secrets.DOCKERHUB_USERNAME }}/cicd
