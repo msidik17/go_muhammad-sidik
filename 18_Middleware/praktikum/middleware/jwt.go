@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"18_Middleware/Praktikum/constants"
+	"18_Middleware/praktikum/constants"
 	"time"
 
 	"github.com/golang-jwt/jwt/v4"
