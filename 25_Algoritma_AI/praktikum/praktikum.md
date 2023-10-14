@@ -1,7 +1,7 @@
-- SOAL
+- SOAL :
 Terdapat sekumpulan data mengenai tulisan dalam bentuk tweet mengenai sebuah kebijakan. Sekumpulan data tersebut ingin dikelompokkan berdasarkan sentimen dari tweet tersebut yaitu sentimen positif dan negatif. Jelaskan algoritma A.I. yang dapat digunakan untuk mengelompokkan tweet tersebut beserta alasannya.
 
-- Jawaban 
+- Jawaban :  
 untuk pengelompokan data yang berbentuk tweet dan dikelompokkan berdasarkan sentimen, saya menggunakan algoritma random forest. algortima ini sendiri merupakan ensemble yang digunakan untuk tugas klasifikasi dan regresi. Ensemble berarti algoritma ini menggabungkan beberapa model pembelajaran mesin (biasanya decision tree) untuk meningkatkan kinerja dan mengurangi overfitting. 
 
 - Alasan 
