@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "96a04410-1050-40fb-b32a-2aaf5df6647a",
+		"name": "AI_Recomendations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29085018"
+	},
+	"item": [
+		{
+			"name": "POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"budget\"  : 20000000,\r\n    \"purpose\" : \"gaming\", \r\n    \"brand\"   : \"Alienware\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/recommendation-laptop",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recommendation-laptop"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"budget\"  : 35000000,\r\n    \"purpose\" : \"produktif\", \r\n    \"brand\"   : \"Apple\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/recommendation-laptop",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recommendation-laptop"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
